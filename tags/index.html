@@ -379,7 +379,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="https://4lo-1255557501.cos.ap-beijing.myqcloud.com/0.jpg?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDUvmkEEXZhdvAsh9e3PUMhqRPmm4sCPW1%26q-sign-time%3D1533398415%3B1533400215%26q-key-time%3D1533398415%3B1533400215%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Ddd7276663b2cd677a284e6a5d8b1d41ebe756b39&token=299c0316444f433e680f42f92d58dde97d3d904a10001&clientIP=110.229.30.251&clientUA=9e4a3d9a-b139-44fd-9466-40ea81f1353c"
+                src="https://4lo-1255557501.cos.ap-beijing.myqcloud.com/0.jpg"
                 alt="4lo" />
             
               <p class="site-author-name" itemprop="name">4lo</p>
@@ -681,9 +681,25 @@
             });
           } else {
             
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
             
           }
         },
