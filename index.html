@@ -313,7 +313,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 <a class="post-title-link" href="/2018/08/04/hello-world/" itemprop="url">
-                  4lo 的第一次 Hexo + github pages个人博客搭建
+                  4lo 第一次 Hexo + github pages 个人博客搭建
                 </a>
               
             
@@ -356,7 +356,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-08-05 00:17:31" itemprop="dateModified" datetime="2018-08-05T00:17:31+08:00">2018-08-05</time>
+                <time title="Modified: 2018-08-05 01:31:39" itemprop="dateModified" datetime="2018-08-05T01:31:39+08:00">2018-08-05</time>
               
             
           </span>
@@ -369,7 +369,7 @@
 
           
           
-             <span id="/2018/08/04/hello-world/" class="leancloud_visitors" data-flag-title="4lo 的第一次 Hexo + github pages个人博客搭建">
+             <span id="/2018/08/04/hello-world/" class="leancloud_visitors" data-flag-title="4lo 第一次 Hexo + github pages 个人博客搭建">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -402,15 +402,23 @@
       
         
           
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天，我用Hexo搭建了我第一个个人博客，下面来分享一下我的经验和踩过得坑.</p>
-<h3 id="搭建Blog"><a href="#搭建Blog" class="headerlink" title="搭建Blog"></a>搭建Blog</h3><p><img src="https://4lo-1255557501.cos.ap-beijing.myqcloud.com/0.jpg" alt=""><br><img src="https://4lo-1255557501.cos.ap-beijing.myqcloud.com/423907-201801031732307217.jpg" alt=""><br>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+            <hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天，我用Hexo搭建了我的第一个个人博客，下面来分享一下我的经验和踩过得坑.</p>
+<hr>
+<h3 id="搭建Blog"><a href="#搭建Blog" class="headerlink" title="搭建Blog"></a>搭建Blog</h3><p><font color="#000000">在github上用hexo搭建blog的教程在网上已经很普遍了</font><br><a href="https://www.baidu.com/s?wd=github+hexo&amp;rsv_spt=1&amp;rsv_iqid=0x9f36b65800024280&amp;issp=1&amp;f=8&amp;rsv_bp=0&amp;rsv_idx=2&amp;ie=utf-8&amp;rqlang=&amp;tn=baiduhome_pg&amp;ch=" target="_blank" rel="noopener">随手一搜就</a><a href="https://www.google.com/search?q=github+hexo&amp;oq=github+hexo&amp;aqs=chrome..69i57j69i60l4j69i65.4227j0j7&amp;sourceid=chrome&amp;ie=UTF-8" target="_blank" rel="noopener">可以得到一个差不多的教程</a></p>
+<p>这里介绍一下需要用到的工具:</p>
+<ul>
+<li><a href="https://github.com/" target="_blank" rel="noopener">github</a></li>
+<li>git</li>
+<li><a href="https://hexo.io/zh-cn/index.html" target="_blank" rel="noopener">Hexo</a> 快速,简介,高效的博客框架</li>
+<li><a href="https://github.com/zhuzhuyule/HexoEditor" target="_blank" rel="noopener">HexoEditor</a> 一个跨平台markdown编辑器</li>
+<li><a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">Hexo-theme-next</a> 个人推荐的一款Hexo主题</li>
+</ul>
+<h3 id="搭建过程中遇到的问题"><a href="#搭建过程中遇到的问题" class="headerlink" title="搭建过程中遇到的问题"></a>搭建过程中遇到的问题</h3><h4 id="1-权限问题"><a href="#1-权限问题" class="headerlink" title="1. 权限问题"></a>1. 权限问题</h4><p>我用的是manjaro linux，用的是和Arch一样的pacman来安装一部分软件的，在安装过程中，一部分问题经常是因为权限上的不同步。<br>在这类问题的报错中，经常会出现 <strong>Permission</strong> 这个词，所以日志或者 <strong>warning</strong> 中有它的时候，就要想一想自己是否使用过sudo来进行一些操作了。</p>
+<h5 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h5><p>通常是是在不会就按照教程一步一步重新来，看是不是自己弄错了<br>如果就算换教程也不能搞定的话，可以查看一下自己安装的文件的所有者，来看自己当前用户是不是有权限来做一些事情。</p>
+<h4 id="2-图床"><a href="#2-图床" class="headerlink" title="2. 图床"></a>2. 图床</h4><p>如果把自己的图片都上传到github上，访问速度就会变得特别慢，所以选择用腾讯的对象云存储服务来保存自己的图片，这样每次访问我的博客，图片就从国内加载，这样就几乎不会出现先出字，再等图片加载的尴尬场面了。<br>其实国内这几年提供图床服务的商家非常多，而且大部分是免费的，出于持久性，我选择的相对大厂的腾讯云.<br>这里推荐把存储桶的权限管理改成 <strong>公有读私有写</strong></p>
+<p><img src="https://4lo-1255557501.cos.ap-beijing.myqcloud.com/bucketgl.png" alt=""></p>
+<h4 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loading...</span><br></pre></td></tr></table></figure>
           
         
       
